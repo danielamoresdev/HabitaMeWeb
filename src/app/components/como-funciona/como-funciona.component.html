@@ -1,0 +1,31 @@
+<section class="como-funciona" id="como-funciona">
+  <div class="content">
+    <h2>¿Cómo funciona HabitaMe?</h2>
+    <p class="subtitle">Un proceso claro, moderno y pensado para ti.</p>
+
+    <div class="steps">
+
+      <div class="step" 
+           [class.visible]="isVisible[0]">
+        <span class="material-icons-round icon">search</span>
+        <h3>1. Busca tu vivienda</h3>
+        <p>Filtra entre miles de opciones según ubicación, precio y características.</p>
+      </div>
+
+      <div class="step"
+           [class.visible]="isVisible[1]">
+        <span class="material-icons-round icon">contact_page</span>
+        <h3>2. Contacta o reserva</h3>
+        <p>Programa una visita desde la plataforma o habla con el propietario.</p>
+      </div>
+
+      <div class="step"
+           [class.visible]="isVisible[2]">
+        <span class="material-icons-round icon">home</span>
+        <h3>3. Estrena tu nuevo hogar</h3>
+        <p>Completa la gestión online y recibe la documentación de forma segura.</p>
+      </div>
+
+    </div>
+  </div>
+</section>

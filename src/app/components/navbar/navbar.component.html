@@ -1,0 +1,17 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <a (click)="scrollTo('/')" class="logo">HabitaMe</a>
+
+  <button class="menu-btn" (click)="toggleMenu()" [class.open]="menuOpen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul class="nav-links" [class.show]="menuOpen">
+    <li><a (click)="scrollTo('que-es')">Qué es</a></li>
+    <li><a (click)="scrollTo('como-funciona')">Cómo funciona</a></li>
+    <li><a (click)="scrollTo('ventajas')">Ventajas</a></li>
+    <li><a (click)="scrollTo('contacto')">Contacto</a></li>
+    <li><a routerLink="/login" class="btn-login">Login</a></li>
+  </ul>
+</nav>

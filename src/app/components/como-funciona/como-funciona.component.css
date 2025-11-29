@@ -1,0 +1,71 @@
+.como-funciona {
+  padding: 90px 20px;
+  background: #F8FAFC;
+  text-align: center;
+}
+
+.como-funciona h2 {
+  font-size: 2.4rem;
+  color: #1E90FF;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 60px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.step {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.7s ease;
+}
+
+.step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon {
+  font-size: 3rem;
+  color: #1E90FF;
+  margin-bottom: 20px;
+}
+
+.step h3 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.step p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Hover */
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}

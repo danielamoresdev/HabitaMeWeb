@@ -1,0 +1,21 @@
+<div class="properties-page">
+  <h2 class="page-title">Habitaciones en alquiler</h2>
+
+  <div class="properties-grid">
+    <div class="property-card" *ngFor="let prop of properties">
+      <div class="image-container">
+        <img [src]="prop.image" [alt]="prop.title">
+      </div>
+      <div class="property-info">
+        <h3>{{ prop.title }}</h3>
+        <p class="location">{{ prop.location }}</p>
+        <p class="details">
+          {{ prop.bedrooms }} habitación{{ prop.bedrooms > 1 ? 'es' : '' }} ·
+          {{ prop.bathrooms }} baño{{ prop.bathrooms > 1 ? 's' : '' }}
+        </p>
+        <p class="price">{{ prop.price | currency:'EUR':'symbol' }}</p>
+        <button (click)="verDetalles(prop.id)" class="btn-details">Ver detalles</button>
+      </div>
+    </div>
+  </div>
+</div>

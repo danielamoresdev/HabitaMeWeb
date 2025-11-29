@@ -1,0 +1,20 @@
+<div class="detail-container">
+
+  <div class="image-box">
+    <img [src]="property.image" [alt]="property.title" />
+  </div>
+
+  <div class="info-box">
+    <h1>{{ property.title }}</h1>
+
+    <p class="price">
+      {{ property.price | currency:'EUR':'symbol' }}
+    </p>
+
+    <div class="detail-item"><strong>Ubicación:</strong> {{ property.location }}</div>
+    <div class="detail-item"><strong>Dormitorios:</strong> {{ property.bedrooms }}</div>
+    <div class="detail-item"><strong>Baños:</strong> {{ property.bathrooms }}</div>
+
+    <button class="btn-back" (click)="volver()">Volver</button>
+  </div>
+</div>

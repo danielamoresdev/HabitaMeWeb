@@ -1,0 +1,24 @@
+<section class="contacto-page">
+  <div class="container">
+    <h1>Contacto</h1>
+    <p class="subtitle">Escríbenos y nuestro equipo te responderá lo antes posible.</p>
+
+    <div class="contact-grid">
+      <!-- Formulario -->
+      <form (ngSubmit)="enviarFormulario()">
+        <input type="text" placeholder="Nombre" [(ngModel)]="nombre" name="nombre" required />
+        <input type="email" placeholder="Correo electrónico" [(ngModel)]="email" name="email" required />
+        <textarea placeholder="Mensaje" [(ngModel)]="mensaje" name="mensaje" rows="6" required></textarea>
+        <button type="button" (click)="enviarFormulario()">Enviar Mensaje</button>
+      </form>
+
+      <!-- Info de contacto -->
+      <div class="info-contacto">
+        <h3>O contáctanos directamente</h3>
+        <p><strong>Teléfono:</strong> +34 600 123 456</p>
+        <p><strong>Email:</strong> contacto@habitame.com</p>
+        <p>Estamos disponibles de lunes a viernes de 9:00 a 18:00</p>
+      </div>
+    </div>
+  </div>
+</section>
