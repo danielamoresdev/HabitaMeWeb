@@ -1,0 +1,137 @@
+/* === ESTRUCTURA A PANTALLA COMPLETA === */
+.auth-wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  /* Fondo moderno tipo app inmobiliaria */
+  background: linear-gradient(135deg, rgba(30, 144, 255, .8), rgba(93, 173, 226, .8)),
+              url('https://media.revistaad.es/photos/688880301faeb8e69577af42/16:9/w_2560%2Cc_limit/Zephyr_Studio%2520Nilasha_06.jpg') center/cover no-repeat;
+  backdrop-filter: blur(4px);
+}
+
+/* === TARJETA DEL FORMULARIO === */
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 35px;
+  border-radius: 20px;
+  background: #ffffffee;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+  animation: fadeIn .4s ease-out;
+  text-align: center;
+}
+
+/* Títulos */
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 22px;
+}
+
+/* Botón cambiar formulario */
+.switch {
+  background: none;
+  border: none;
+  color: #1E90FF;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 25px;
+  transition: .2s;
+}
+
+.switch:hover {
+  color: #5DADE2;
+  text-decoration: underline;
+}
+
+/* Formularios */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group label {
+  text-align: left;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: .2s;
+}
+
+input:focus {
+  border-color: #1E90FF;
+}
+
+/* Botón principal */
+.main-btn {
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1E90FF, #5DADE2);
+  color: white;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: .2s;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.back-btn {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #5DADE2, #1E90FF); /* degradado inverso */
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 15px;
+  transition: .2s;
+}
+
+.back-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+
+/* Animación */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade {
+  animation: smooth .25s ease-out;
+}
+
+@keyframes smooth {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
