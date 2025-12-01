@@ -1,5 +1,5 @@
-<nav class="navbar" [class.scrolled]="isScrolled">
-  <a (click)="scrollTo('/')" class="logo">HabitaMe</a>
+<nav *ngIf="!hideNavbar" class="navbar" [class.scrolled]="isScrolled">
+  <a routerLink="/" class="logo">HabitaMe</a>
 
   <button class="menu-btn" (click)="toggleMenu()" [class.open]="menuOpen">
     <span></span>

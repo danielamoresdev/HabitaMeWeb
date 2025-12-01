@@ -1,5 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { filter } from 'rxjs';
 
 /**
  * Componente que gestiona la barra de navegación principal.
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
+  imports: [RouterModule, CommonModule]
 })
 export class NavbarComponent {
 
@@ -18,8 +21,16 @@ export class NavbarComponent {
 
   /** Indica si el usuario ha hecho scroll para cambiar el estilo del navbar */
   isScrolled = false;
+  hideNavbar: any;
 
-  constructor(private router: Router) {}
+  constructor(private readonly router: Router) {
+    // Detectar cambios de ruta
+    this.router.events.pipe(
+      filter((event: any) => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      this.hideNavbar = event.urlAfterRedirects.includes('/login');
+    });
+  }
 
   /**
    * Abre o cierra el menú móvil.

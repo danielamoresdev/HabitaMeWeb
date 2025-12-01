@@ -1,0 +1,49 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+
+    <h2 class="title">{{ isSignup ? 'Crear cuenta' : 'Iniciar sesión' }}</h2>
+    <p class="subtitle">{{ isSignup ? 'Únete a HabitaMe en segundos' : 'Bienvenido de nuevo' }}</p>
+
+    <button class="switch" (click)="toggleForm()">
+      {{ isSignup ? '← Ya tengo cuenta' : 'Crear una cuenta →' }}
+    </button>
+
+    <!-- LOGIN -->
+    <form *ngIf="!isSignup" class="form fade">
+      <div class="input-group">
+        <label for="loginUser">Usuario</label>
+        <input id="loginUser" type="text" [(ngModel)]="loginUser" name="loginUser">
+      </div>
+      <div class="input-group">
+        <label for="loginPassword">Contraseña</label>
+        <input id="loginPassword" type="password" [(ngModel)]="loginPassword" name="loginPassword">
+      </div>
+      <button type="button" class="main-btn" (click)="onLogin()">Entrar</button>
+    </form>
+
+    <!-- SIGNUP -->
+    <form *ngIf="isSignup" class="form fade">
+      <div class="input-group">
+        <label for="regName">Nombre</label>
+        <input id="regName" type="text" [(ngModel)]="regName" name="regName">
+      </div>
+      <div class="input-group">
+        <label for="regSurname">Apellido</label>
+        <input id="regSurname" type="text" [(ngModel)]="regSurname" name="regSurname">
+      </div>
+      <div class="input-group">
+        <label for="regUser">Usuario</label>
+        <input id="regUser" type="text" [(ngModel)]="regUser" name="regUser">
+      </div>
+      <div class="input-group">
+        <label for="regPassword">Contraseña</label>
+        <input id="regPassword" type="password" [(ngModel)]="regPassword" name="regPassword">
+      </div>
+      <button type="button" class="main-btn" (click)="onSignup()">Registrarse</button>
+    </form>
+
+    <!-- Botón volver al inicio -->
+    <button class="back-btn" (click)="volverInicio()">← Volver al inicio</button>
+
+  </div>
+</div>
